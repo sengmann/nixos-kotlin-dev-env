@@ -1,0 +1,45 @@
+{
+  "name": "slidev-theme-thecodecampus",
+  "version": "0.0.0",
+  "type": "module",
+  "keywords": [
+    "slidev-theme",
+    "slidev"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "build": "slidev build slides.md",
+    "dev": "slidev slides.md --open --inspect",
+    "export": "slidev export slides.md",
+    "format": "prettier --config=.prettierrc.json5 .",
+    "screenshot": "slidev export slides.md --format png",
+    "start": "slidev slides.md --open"
+  },
+  "dependencies": {
+    "@fontsource/jetbrains-mono": "^5.2.8",
+    "@fontsource/noto-sans": "^5.2.10",
+    "@iconify-json/vscode-icons": "^1.2.40",
+    "@slidev/types": "^52.11.3",
+    "computer-modern": "^0.1.3",
+    "slidev-theme-academic": "2.1.0"
+  },
+  "devDependencies": {
+    "@slidev/cli": "^52.11.3",
+    "prettier": "3.8.0",
+    "prettier-plugin-slidev": "1.0.5"
+  },
+  "//": "Learn more: https://sli.dev/guide/write-theme.html",
+  "slidev": {
+    "colorSchema": "both",
+    "aspectRatio": "16:9",
+    "canvasWidth": 1080,
+    "defaults": {
+      "fonts": {
+        "sans": "Noto Sans",
+        "mono": "Jetbrains Mono"
+      }
+    }
+  }
+}
