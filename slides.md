@@ -2,8 +2,10 @@
 theme: ./
 transition: fade
 title: Nix - Dev Environment
-coverDate: ""
-coverLogoUrl: /assets/images/w11k-logo.svg
+coverAuthor: ["Sascha Engmann"]
+coverBackgroundSourceUrl: "https://github.com/NixOS/nixos-artwork/blob/master/wallpapers/nix-wallpaper-nineish-catppuccin-frappe.svg"
+coverBackgroundSource: "Nix wallpaper nineish catppuccin frappé - Lizenz: CC BY-SA 4.0"
+coverBackgroundUrl: /assets/images/nix-wallpaper-nineish-catppuccin-frappe-alt.svg
 layout: cover
 routerMode: hash
 selectable: true
@@ -14,7 +16,10 @@ charset: UTF-8
 hideInToc: true
 ---
 
+<img src="/assets/images/w11k-logo.svg" alt="W11K Logo" class="max-h-12" />
+
 # Nix für komplexe Entwicklungsumgebungen
+
 
 ---
 
