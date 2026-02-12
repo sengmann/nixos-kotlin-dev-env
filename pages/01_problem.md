@@ -15,6 +15,9 @@
     * kein kompliziertes Onboarding
     * so wenig manueller Arbeit wie nötig
     * einfacher Wechsel zwischen Projekten
+* Beispiel heute:
+    * Backend (Spring Boot / Kotlin)
+    * Frontend (Angular Client)
 * Bonus:
     * verwenden der Umgebung für CI / CD
     * reproduzierbare Artefakte
@@ -95,7 +98,7 @@ layout: two-cols-header
 ::left::
 
 * Docker Container
-    * deklarativ*
+    * deklarativ<sub>1</sub>
     * Portabel
     * haben durch Isolierung eigene Probleme
 
@@ -121,6 +124,10 @@ connecting to database localhost:5432
 ERROR connection refused localhost:5432
 ```
 ::
+
+<Footnotes separator>
+  <Footnote :number=1>irgendwie, aber auch nicht richtig</Footnote>
+</Footnotes>
 
 ---
 layout: two-cols-header
@@ -171,14 +178,17 @@ layout: two-cols-header
 
 ::right::
 
-```nix [shell.nix]
-{ pkgs ? import <nixpkgs> {} }:
+```nix [shell.nix ~i-vscode-icons:file-type-nix~]
+{
+  pkgs ? import <nixpkgs> { },
+}:
 
 pkgs.mkShell {
   buildInputs = with pkgs; [
     nodejs_18
   ];
 }
+
 ```
 
 ```shell

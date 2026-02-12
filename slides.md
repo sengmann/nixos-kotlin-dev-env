@@ -11,6 +11,7 @@ mdc: true
 lineNumbers: true
 favicon: /favicon/favicon.ico
 charset: UTF-8
+hideInToc: true
 ---
 
 # Nix für komplexe Entwicklungsumgebungen
@@ -19,7 +20,7 @@ charset: UTF-8
 
 # Agenda
 
-<Toc maxDepth="2" columns="2" mode="all" />
+<Toc maxDepth="1" columns="1" mode="all" />
 
 ---
 src: pages/intro.md

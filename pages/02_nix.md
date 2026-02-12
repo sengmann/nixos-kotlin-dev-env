@@ -20,7 +20,7 @@
 
 * spezialisiert auf das Erstellen von Paketen (derivations)
 * wird genutzt zur präzisen Beschreibung von
-    * Dateiinhalten
+    * Datei-Inhalten
     * Ableitung neuer Dateien
 * Pure Functional
 * Lazy Evaluation
@@ -46,6 +46,10 @@ layout: two-cols-header
 ::right::
 
 ![Package registry comparision](https://repology.org/graph/map_repo_size_fresh.svg)
+
+<Footnotes separator>
+  <Footnote :number=1>Graph: <a href="https://repology.org/repositories/graphs">https://repology.org/repositories/graphs</a></Footnote>
+</Footnotes>
 
 ---
 
@@ -93,7 +97,7 @@ layout: two-cols-header
 ## Nix ist ein Betriebssystem
 
 * verwendet den Nix Paketmanager
-* deklarative Systemkonfiguration
+* deklarative Systemkonfiguration, beschrieben als Nix Expression
 * atomare Updates und Rollbacks mittels Generationen
 * reproduzierbare Systemkonfiguration
 
@@ -122,9 +126,10 @@ layout: two-cols-header
 
 ::right::
 
-```nix [shell.nix]
-{ pkgs ? import <nixpkgs> { } }:
-
+```nix [shell.nix ~i-vscode-icons:file-type-nix~]
+{
+  pkgs ? import <nixpkgs> { },
+}:
 pkgs.mkShell {
   packages = with pkgs; [
     jdk21
@@ -140,9 +145,10 @@ pkgs.mkShell {
     export PATH="$GRADLE_HOME/bin:$PATH"
 
     echo "Using JAVA_HOME=$JAVA_HOME"
-    echo "Using Gradle: $(gradle --version | head -n 1)"
+    echo "Using Gradle: $(gradle --version)"
   '';
 }
+
 ```
 
 ---
@@ -181,7 +187,7 @@ layout: two-cols-header
 
 ## Nix Flakes
 
-```nix {all|4-6|8|9-12|14-38|all}{maxHeight:'95%'}
+```nix [flake.nix ~i-vscode-icons:file-type-nix~]{all|4-6|8|9-12|14-38|all}{maxHeight:'95%'}
 {
   description = "Java development environment";
 
@@ -272,4 +278,3 @@ layout: two-cols-header
 * deklarative Umgebungsdefinition via `devenv.nix`
 * automatische Aktivierung beim Betreten des Projektverzeichnisses (mit direnv)
 * integrierte Services (Datenbanken, Redis, etc.) über `process-compose`
-
