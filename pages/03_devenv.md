@@ -1,7 +1,7 @@
 # devenv
 
-* Fokus auf Bereitstellung von Entwicklungsumgebungen
-* sinnvolle Defaults
+- Fokus auf Bereitstellung von Entwicklungsumgebungen
+- sinnvolle Defaults
 
 ---
 layout: two-cols-header
@@ -99,12 +99,12 @@ layout: two-cols-header
 
 ::left::
 
-* vorgefertigte Module um verschiedene Sprachen zu konfigurieren
-* einfache Aktivierung per `languages.<language>.enable = true`
-* automatische Installation von Compiler, Interpreter und Tooling
-* versionsspezifische Konfiguration möglich
-* Unterstützung für viele Sprachen: Python, Rust, Go, JavaScript, Java, etc.
-* IDE-Integration (LSP, Formatter, Linter) oft inklusive
+- vorgefertigte Module um verschiedene Sprachen zu konfigurieren
+- einfache Aktivierung per `languages.<language>.enable = true`
+- automatische Installation von Compiler, Interpreter und Tooling
+- versionsspezifische Konfiguration möglich
+- Unterstützung für viele Sprachen: Python, Rust, Go, JavaScript, Java, etc.
+- IDE-Integration (LSP, Formatter, Linter) oft inklusive
 
 ::right::
 
@@ -131,22 +131,22 @@ layout: two-cols-header
 
 ## Secrets
 
-* für Entwicklung können Secrets notwendig sein
-  * Artefakt-Server
-  * API-Keys
-* Secrets müssen sicher verwaltet werden
-* sollen, wenn möglich nur einmal definiert werden
-* devenv beschreibt Secrets mit SecretSpec
+- für Entwicklung können Secrets notwendig sein
+  - Artefakt-Server
+  - API-Keys
+- Secrets müssen sicher verwaltet werden
+- sollen, wenn möglich nur einmal definiert werden
+- devenv beschreibt Secrets mit SecretSpec
 
 ---
 
 ## SecretSpec
 
-* beschreibt Secrets deklarativ
-  * Welche Secrets gibt es
-  * Wie werden Secrets festgelegt / verwendet (Profile, benötigt oder optional, Standartwerte)
-  * Wo werden die Secrets gespeichert (Keyring, Env-Variablen, 1Password, ...)
-* devenv integriert SecretSpec Secrets automatisch in Konfiguration
+- beschreibt Secrets deklarativ
+  - Welche Secrets gibt es
+  - Wie werden Secrets festgelegt / verwendet (Profile, benötigt oder optional, Standartwerte)
+  - Wo werden die Secrets gespeichert (Keyring, Env-Variablen, 1Password, ...)
+- devenv integriert SecretSpec Secrets automatisch in Konfiguration
 
 ::code-group
 
@@ -168,7 +168,7 @@ artifactory_contextUrl = { description = "", required = true, default = "https:/
   env.ORG_GRADLE_PROJECT_artifactory_user = config.secretspec.secrets.artifactory_user;
   env.ORG_GRADLE_PROJECT_artifactory_password = config.secretspec.secrets.artifactory_password;
   env.ORG_GRADLE_PROJECT_artifactory_contextUrl = config.secretspec.secrets.artifactory_contextUrl;
-  
+
   packages = [
     # for now needed to access secretspec
     pkgs.secretspec
@@ -182,10 +182,10 @@ artifactory_contextUrl = { description = "", required = true, default = "https:/
 
 ## Tasks
 
-* devenv kennt das Konzept der Tasks
-* können als Fire and Forget ausgeführt werden
-* Task können andere Tasks als Dependency nutzen
-* Einschränkung, wann Tasks erneut ausgeführt werden müssen
+- devenv kennt das Konzept der Tasks
+- können als Fire and Forget ausgeführt werden
+- Task können andere Tasks als Dependency nutzen
+- Einschränkung, wann Tasks erneut ausgeführt werden müssen
 
 ```nix [devenv.nix ~i-vscode-icons:file-type-nix~]{all|4|5|6-11|13|all}
 { pkgs, lib, config, ... }:
@@ -212,14 +212,14 @@ layout: two-cols-header
 
 ::left::
 
-* langlaufende Tasks sind können als Prozesse beschrieben werden
-* devenv stellt Prozess Management zur Verfügung
-  * Abhängigkeiten
-  * Status
-  * File-Watcher
-  * Socket Aktivierungen
-* verschiedene Prozess Manager möglich
-* process-compose ist der Default <sup>1</sup>
+- langlaufende Tasks sind können als Prozesse beschrieben werden
+- devenv stellt Prozess Management zur Verfügung
+  - Abhängigkeiten
+  - Status
+  - File-Watcher
+  - Socket Aktivierungen
+- verschiedene Prozess Manager möglich
+- process-compose ist der Default <sup>1</sup>
 
 ::right::
 
@@ -252,14 +252,14 @@ layout: two-cols-header
 
 ::left::
 
-* noch eine Ebene höher abstrahiert als Prozesse
-* vordefinierte Services, wie zum Beispiel
-  * Datenbank
-  * Proxy
-  * Mailserver
-  * Keycloak
-* Services werden direkt als Prozess ausgeführt, nicht als Container
-* Zustand wird in `.devenv/state` gespeichert
+- noch eine Ebene höher abstrahiert als Prozesse
+- vordefinierte Services, wie zum Beispiel
+  - Datenbank
+  - Proxy
+  - Mailserver
+  - Keycloak
+- Services werden direkt als Prozess ausgeführt, nicht als Container
+- Zustand wird in `.devenv/state` gespeichert
 
 ::right::
 
@@ -285,22 +285,22 @@ layout: two-cols-header
 
 ## Profiles
 
-* CI/CD Umgebungen unterscheiden sich nicht sehr von lokalen Entwicklungsumgebungen
-* Profile ermöglichen umgebungsspezifische Konfigurationen
-  * verschiedene Secret-Werte pro Profil
-  * angepasste Prozess-Starts
-* devenv kann mit verschiedenen Profilen gestartet werden
-* Secrets können pro Profil definiert werden
+- CI/CD Umgebungen unterscheiden sich nicht sehr von lokalen Entwicklungsumgebungen
+- Profile ermöglichen umgebungsspezifische Konfigurationen
+  - verschiedene Secret-Werte pro Profil
+  - angepasste Prozess-Starts
+- devenv kann mit verschiedenen Profilen gestartet werden
+- Secrets können pro Profil definiert werden
 
 ---
 
 ## Erfahrungen bisher
 
-* Lernkurve von Nix flacht deutlich ab, wenn Kollegen mit devenv starten
-* es können auch alle Nix Features genutzt werden, wenn man denn will
-* deutlich geringere Onboarding Zeiten
-* erheblich weniger Reibung bei Wechsel zwischen den Projekten
-* Processes nicht in Container zu kapseln macht es einfacher<sub>1</sub>
+- Lernkurve von Nix flacht deutlich ab, wenn Kollegen mit devenv starten
+- es können auch alle Nix Features genutzt werden, wenn man denn will
+- deutlich geringere Onboarding Zeiten
+- erheblich weniger Reibung bei Wechsel zwischen den Projekten
+- Processes nicht in Container zu kapseln macht es einfacher<sub>1</sub>
 
 <Footnotes separator>
   <Footnote :number="1">Beispiel: localhost ist wirklich localhost</Footnote>
@@ -310,10 +310,10 @@ layout: two-cols-header
 
 ## Offene Punkte
 
-* Projektübergreifende Secrets sind in SecretSpec aktuell nicht möglich <sub>1</sub>
-* Installation von Nix auf MacOS manchmal schwierig <sub>2</sub>
-* Build Prozess in Nix abbilden, um bessere Dockerimages zu bauen
-* MSSQL nicht in Nixpkgs, dafür brauchen wir immer noch Container
+- Projektübergreifende Secrets sind in SecretSpec aktuell nicht möglich <sub>1</sub>
+- Installation von Nix auf MacOS manchmal schwierig <sub>2</sub>
+- Build Prozess in Nix abbilden, um bessere Dockerimages zu bauen
+- MSSQL nicht in Nixpkgs, dafür brauchen wir immer noch Container
 
 <Footnotes separator>
   <Footnote :number="1">Feature soll mit Release <a href="https://github.com/cachix/devenv/issues/2449#issuecomment-3873588797">0.7.2</a> kommen</Footnote>

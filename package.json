@@ -1,9 +1,8 @@
 {
-  "name": "slidev-theme-thecodecampus",
-  "version": "0.0.0",
+  "name": "nixos-kotlin-dev-env",
+  "version": "1.0.0",
   "type": "module",
   "keywords": [
-    "slidev-theme",
     "slidev"
   ],
   "engines": {
@@ -13,7 +12,7 @@
     "build": "slidev build slides.md",
     "dev": "slidev slides.md --open --inspect",
     "export": "slidev export slides.md",
-    "format": "prettier --config=.prettierrc.json5 .",
+    "format": "prettier --config=.prettierrc.json5 --write .",
     "screenshot": "slidev export slides.md --format png",
     "start": "slidev slides.md --open"
   },
@@ -30,7 +29,6 @@
     "prettier": "3.8.0",
     "prettier-plugin-slidev": "1.0.5"
   },
-  "//": "Learn more: https://sli.dev/guide/write-theme.html",
   "slidev": {
     "colorSchema": "both",
     "aspectRatio": "16:9",

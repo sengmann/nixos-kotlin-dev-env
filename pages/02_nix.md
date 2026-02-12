@@ -1,30 +1,30 @@
 # Was ist Nix?
 
-* eine funktionale Programmiersprache
-* ein Paketmanager
-* ein Betriebssystem (NixOS)
+- eine funktionale Programmiersprache
+- ein Paketmanager
+- ein Betriebssystem (NixOS)
 
 ---
 
 ## Kurze Historie
 
-* 2003: Eelco Dolstra entwickelt Nix als Teil seiner Doktorarbeit
-* 2006: Erste Version von NixOS veröffentlicht
-* 2015: Nix wird von der Community weiterentwickelt
-* 2021: Einführung von Nix Flakes (experimentell)
-* Heute: aktive Community, über 100.000 Pakete verfügbar
+- 2003: Eelco Dolstra entwickelt Nix als Teil seiner Doktorarbeit
+- 2006: Erste Version von NixOS veröffentlicht
+- 2015: Nix wird von der Community weiterentwickelt
+- 2021: Einführung von Nix Flakes (experimentell)
+- Heute: aktive Community, über 100.000 Pakete verfügbar
 
 ---
 
 ## Nix ist eine funktionale Programmiersprache
 
-* spezialisiert auf das Erstellen von Paketen (derivations)
-* wird genutzt zur präzisen Beschreibung von
-    * Datei-Inhalten
-    * Ableitung neuer Dateien
-* Pure Functional
-* Lazy Evaluation
-* dynamisch typisiert
+- spezialisiert auf das Erstellen von Paketen (derivations)
+- wird genutzt zur präzisen Beschreibung von
+  - Datei-Inhalten
+  - Ableitung neuer Dateien
+- Pure Functional
+- Lazy Evaluation
+- dynamisch typisiert
 
 ---
 layout: two-cols-header
@@ -34,14 +34,14 @@ layout: two-cols-header
 
 ::left::
 
-* deklarative Paketverwaltung
-* reproduzierbare Builds
-    * im Zweifel von Source bauen
-    * Binary Cache stellt gebaute Artefakte zur Verfügung
-* alle Pakete in `/nix/store`
-    * Hash aller Inputs im Pfad
-    * mehrere Versionen parallel installierbar
-    * keine globalen Systemabhängigkeiten
+- deklarative Paketverwaltung
+- reproduzierbare Builds
+  - im Zweifel von Source bauen
+  - Binary Cache stellt gebaute Artefakte zur Verfügung
+- alle Pakete in `/nix/store`
+  - Hash aller Inputs im Pfad
+  - mehrere Versionen parallel installierbar
+  - keine globalen Systemabhängigkeiten
 
 ::right::
 
@@ -57,10 +57,10 @@ layout: two-cols-header
 
 1. Prefix des Stores
 2. Hash aller Inputs im Pfad
-    * Source-Code
-    * Compiler Settings
-    * CPU Architektur
-    * ... 
+   - Source-Code
+   - Compiler Settings
+   - CPU Architektur
+   - ...
 3. Name des Pakets
 
 <figure class="bg-gray-100 dark:bg-gray-800 p-3 mt-5">
@@ -96,19 +96,19 @@ layout: two-cols-header
 
 ## Nix ist ein Betriebssystem
 
-* verwendet den Nix Paketmanager
-* deklarative Systemkonfiguration, beschrieben als Nix Expression
-* atomare Updates und Rollbacks mittels Generationen
-* reproduzierbare Systemkonfiguration
+- verwendet den Nix Paketmanager
+- deklarative Systemkonfiguration, beschrieben als Nix Expression
+- atomare Updates und Rollbacks mittels Generationen
+- reproduzierbare Systemkonfiguration
 
 ---
 
 ## Wie kann Nix unser Problem lösen?
 
-* deklarative Beschreibung aller für die Entwicklung notwendiger Pakete
-* Portabel auf Linux, MacOS und Windows (WSL)
-* sehr hohe Reproduzierbarkeit
-* große Auswahl an Paketen (nixpkgs)
+- deklarative Beschreibung aller für die Entwicklung notwendiger Pakete
+- Portabel auf Linux, MacOS und Windows (WSL)
+- sehr hohe Reproduzierbarkeit
+- große Auswahl an Paketen (nixpkgs)
 
 ---
 layout: two-cols-header
@@ -118,11 +118,11 @@ layout: two-cols-header
 
 ::left::
 
-* Erstellen einer `shell.nix` Datei im Projektverzeichnis
-* Deklaration der benötigten Pakete in `buildInputs`
-* Aktivierung mit `nix-shell` Kommando
-* Automatisches Laden der Umgebung beim Betreten
-* Verlassen mit `exit` oder Ctrl+D
+- Erstellen einer `shell.nix` Datei im Projektverzeichnis
+- Deklaration der benötigten Pakete in `buildInputs`
+- Aktivierung mit `nix-shell` Kommando
+- Automatisches Laden der Umgebung beim Betreten
+- Verlassen mit `exit` oder Ctrl+D
 
 ::right::
 
@@ -159,29 +159,29 @@ layout: two-cols-header
 
 ::left::
 
-* Was haben wir bisher?
-    * Deklarative Beschreibung, wie unsere Entwicklungsumgebung aussieht
-    * shellHook setzt die Umgebung bei Betreten der Shell auf
+- Was haben wir bisher?
+  - Deklarative Beschreibung, wie unsere Entwicklungsumgebung aussieht
+  - shellHook setzt die Umgebung bei Betreten der Shell auf
 
 ::right::
 
-* Was fehlt noch?
-  * nicht gut reproduzierbar: genaue Paketversion hängen von globalen nixpkgs ab
+- Was fehlt noch?
+  - nicht gut reproduzierbar: genaue Paketversion hängen von globalen nixpkgs ab
 
 ---
 
 ## Nix Flakes
 
-* experimentelles Feature für bessere Reproduzierbarkeit
-* `flake.nix`: deklarative Beschreibung der Inputs und Outputs
-  * Inputs: Abhängigkeiten mit exakter Version (Git-Commit, Tarball-Hash)
-  * Outputs: was die Flake bereitstellt (Packages, Dev-Shells, NixOS-Konfigurationen)
-* `flake.lock`: lockfile mit exakten Versionen aller Inputs
-* Befehl für Development Shell `nix develop`
-* Vorteile:
-  * vollständig reproduzierbare Builds
-  * explizite Abhängigkeitsverwaltung
-  * einfaches Teilen und Versionieren von Entwicklungsumgebungen
+- experimentelles Feature für bessere Reproduzierbarkeit
+- `flake.nix`: deklarative Beschreibung der Inputs und Outputs
+  - Inputs: Abhängigkeiten mit exakter Version (Git-Commit, Tarball-Hash)
+  - Outputs: was die Flake bereitstellt (Packages, Dev-Shells, NixOS-Konfigurationen)
+- `flake.lock`: lockfile mit exakten Versionen aller Inputs
+- Befehl für Development Shell `nix develop`
+- Vorteile:
+  - vollständig reproduzierbare Builds
+  - explizite Abhängigkeitsverwaltung
+  - einfaches Teilen und Versionieren von Entwicklungsumgebungen
 
 ---
 
@@ -237,44 +237,44 @@ layout: two-cols-header
 
 ::left::
 
-* das Gute
-    * Nix bietet (gerade mit Flakes) exzellente Reproduzierbarkeit
-    * mit Shell Hooks Setup möglichst einfach
-    * ausgezeichnete Automatisierung möglich
+- das Gute
+  - Nix bietet (gerade mit Flakes) exzellente Reproduzierbarkeit
+  - mit Shell Hooks Setup möglichst einfach
+  - ausgezeichnete Automatisierung möglich
 
 ::right::
 
-* das Schlechte
-    * Lernkurve
-    * Komplexität
+- das Schlechte
+  - Lernkurve
+  - Komplexität
 
 ---
 
 ## Geht das nicht einfacher?
 
-* diverse Projekte versuchen die Hürde zum Einstieg kleiner zu machen
-    * Nix verstecken
-    * Abstraktion über Nix stülpen
-* Beispiele:
-    * [Flox](https://flox.dev)
-    * [devenv](https://devenv.sh)
+- diverse Projekte versuchen die Hürde zum Einstieg kleiner zu machen
+  - Nix verstecken
+  - Abstraktion über Nix stülpen
+- Beispiele:
+  - [Flox](https://flox.dev)
+  - [devenv](https://devenv.sh)
 
 ---
 
 ## Flox
 
-* vereinfachte Abstraktion über Nix
-* deklarative Umgebungsdefinition via `manifest.toml`
-* automatische Aktivierung beim Betreten des Projektverzeichnisses
-* teilen von Umgebungen über Flox Hub
-* als Tool für AI Agents
-* Kubernetes ohne Images
+- vereinfachte Abstraktion über Nix
+- deklarative Umgebungsdefinition via `manifest.toml`
+- automatische Aktivierung beim Betreten des Projektverzeichnisses
+- teilen von Umgebungen über Flox Hub
+- als Tool für AI Agents
+- Kubernetes ohne Images
 
 ---
 
 ## devenv
 
-* vereinfachte Abstraktion über Nix durch sinnvolle Defaults
-* deklarative Umgebungsdefinition via `devenv.nix`
-* automatische Aktivierung beim Betreten des Projektverzeichnisses (mit direnv)
-* integrierte Services (Datenbanken, Redis, etc.) über `process-compose`
+- vereinfachte Abstraktion über Nix durch sinnvolle Defaults
+- deklarative Umgebungsdefinition via `devenv.nix`
+- automatische Aktivierung beim Betreten des Projektverzeichnisses (mit direnv)
+- integrierte Services (Datenbanken, Redis, etc.) über `process-compose`

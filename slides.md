@@ -12,6 +12,9 @@ selectable: true
 mdc: true
 lineNumbers: true
 favicon: /favicon/favicon.ico
+fonts:
+ provider: none 
+ local: Jetbrains Mono, Noto Sans
 charset: UTF-8
 hideInToc: true
 ---
@@ -19,7 +22,6 @@ hideInToc: true
 <img src="/assets/images/w11k-logo.svg" alt="W11K Logo" class="max-h-12" />
 
 # Nix für komplexe Entwicklungsumgebungen
-
 
 ---
 

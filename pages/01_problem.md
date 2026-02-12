@@ -1,35 +1,35 @@
 # Das Problem
 
-* Wechsel zwischen verschiedenen Projekten bringt Reibung
-    * unterschiedliche SDK Versionen pro Projekt
-    * verschiedene Artefakt-Server pro Kunde
-* nicht (gut) reproduzierbare Umgebung
-    * Fehler aka. Works on my machine
-    * bei Änderungen keine Vorhersagbarkeit der Auswirkungen
+- Wechsel zwischen verschiedenen Projekten bringt Reibung
+  - unterschiedliche SDK Versionen pro Projekt
+  - verschiedene Artefakt-Server pro Kunde
+- nicht (gut) reproduzierbare Umgebung
+  - Fehler aka. Works on my machine
+  - bei Änderungen keine Vorhersagbarkeit der Auswirkungen
 
 ---
 
 ## Das Ziel
 
-* Setup einer Development Umgebung, mit
-    * kein kompliziertes Onboarding
-    * so wenig manueller Arbeit wie nötig
-    * einfacher Wechsel zwischen Projekten
-* Beispiel heute:
-    * Backend (Spring Boot / Kotlin)
-    * Frontend (Angular Client)
-* Bonus:
-    * verwenden der Umgebung für CI / CD
-    * reproduzierbare Artefakte
+- Setup einer Development Umgebung, mit
+  - kein kompliziertes Onboarding
+  - so wenig manueller Arbeit wie nötig
+  - einfacher Wechsel zwischen Projekten
+- Beispiel heute:
+  - Backend (Spring Boot / Kotlin)
+  - Frontend (Angular Client)
+- Bonus:
+  - verwenden der Umgebung für CI / CD
+  - reproduzierbare Artefakte
 
 ---
 
 ## Lösungsansätze
 
-* manuelles Setup
-* Tools wie SDK-Man (JVM), nvm (Node.js)
-* Dev-Containers
-* Nix
+- manuelles Setup
+- Tools wie SDK-Man (JVM), nvm (Node.js)
+- Dev-Containers
+- Nix
 
 ---
 layout: two-cols-header
@@ -39,9 +39,9 @@ layout: two-cols-header
 
 ::left::
 
-* manuelles Setup
-    * skaliert genau gar nicht
-    * Fehleranfällig
+- manuelles Setup
+  - skaliert genau gar nicht
+  - Fehleranfällig
 
 ::right::
 
@@ -68,9 +68,9 @@ layout: two-cols-header
 
 ::left::
 
-* Tools wie SDK-Man, NVM usw.
-    * sind für jede Technologie anders
-    * können nur imperativ verwendet werden
+- Tools wie SDK-Man, NVM usw.
+  - sind für jede Technologie anders
+  - können nur imperativ verwendet werden
 
 ::right::
 
@@ -97,10 +97,10 @@ layout: two-cols-header
 
 ::left::
 
-* Docker Container
-    * deklarativ<sub>1</sub>
-    * Portabel
-    * haben durch Isolierung eigene Probleme
+- Docker Container
+  - deklarativ<sub>1</sub>
+  - Portabel
+  - haben durch Isolierung eigene Probleme
 
 ::right::
 
@@ -123,6 +123,7 @@ $ npm run start
 connecting to database localhost:5432
 ERROR connection refused localhost:5432
 ```
+
 ::
 
 <Footnotes separator>
@@ -137,28 +138,25 @@ layout: two-cols-header
 
 ::left::
 
-* Dev-Container
-  * gleiche Einschränkungen wie Docker Container
-  * im Falle von VS-Code besser integriert
-  * vorgefertigte Images für 'typische' Umgebungen
+- Dev-Container
+  - gleiche Einschränkungen wie Docker Container
+  - im Falle von VS-Code besser integriert
+  - vorgefertigte Images für 'typische' Umgebungen
 
 ::right::
 
 ```json [devcontainer.json]
 {
-	"image": "mcr.microsoft.com/devcontainers/typescript-node:20",
-	"features": {
-		"ghcr.io/devcontainers/features/docker-in-docker:2": {}
-	},
-	"postCreateCommand": "npm install -g @devcontainers/cli",
-	"customizations": {
-		"vscode": {
-			"extensions": [
-				"dbaeumer.vscode-eslint",
-				"editorconfig.editorconfig"
-			]
-		}
-	}
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:20",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  },
+  "postCreateCommand": "npm install -g @devcontainers/cli",
+  "customizations": {
+    "vscode": {
+      "extensions": ["dbaeumer.vscode-eslint", "editorconfig.editorconfig"]
+    }
+  }
 }
 ```
 
@@ -172,9 +170,9 @@ layout: two-cols-header
 
 ::left::
 
-* Nix
-    * wirklich deklarativ
-    * Portabel
+- Nix
+  - wirklich deklarativ
+  - Portabel
 
 ::right::
 

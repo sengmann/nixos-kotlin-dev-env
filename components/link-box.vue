@@ -2,7 +2,10 @@
   <div class="flex flex-col items-center justify-items-center">
     <a :href="link" class="relative block hover:brightness-70" target="_blank">
       <img class="h-[250px] border-[2em] border-white" :src="img" />
-      <p v-if="text" class="absolute inset-0 flex items-end justify-center text-black">
+      <p
+        v-if="text"
+        class="absolute inset-0 flex items-end justify-center text-black"
+      >
         {{ text }}
       </p>
     </a>

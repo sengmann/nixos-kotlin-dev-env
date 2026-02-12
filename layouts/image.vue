@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-import { handleBackground } from '../layout-helper'
+import { computed } from "vue";
+import { handleBackground } from "../layout-helper";
 
 const props = defineProps({
   image: {
@@ -8,22 +8,20 @@ const props = defineProps({
   },
   backgroundSize: {
     type: String,
-    default: 'cover',
+    default: "cover",
   },
   layoutClass: {
-    type: String
-  }
-})
+    type: String,
+  },
+});
 
-const style = computed(() => handleBackground(props.image, false, props.backgroundSize))
+const style = computed(() =>
+  handleBackground(props.image, false, props.backgroundSize),
+);
 </script>
 
 <template>
-  <div 
-     class="slidev-layout w-full h-full" 
-     :class="layoutClass"
-     :style="style"
-     >
+  <div class="slidev-layout w-full h-full" :class="layoutClass" :style="style">
     <slot />
   </div>
 </template>

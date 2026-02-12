@@ -10,13 +10,13 @@ layoutClass: "!bg-contain !bg-right-top"
 
 ::left::
 
-* Java, Scala, Kotlin
-* Datenbanken wie Postgres, MySQL und MongoDB
-* Serverseitiges JavaScript (NodeJS)
-* Web-Anwendungen mit HTML5, CSS3, JavaScript auf Basis von Angular & TypeScript
-* Seit 2015 im Unternehmen
-* Seit 2016 Trainer
-* Seit 2025 DevOps Engineer
+- Java, Scala, Kotlin
+- Datenbanken wie Postgres, MySQL und MongoDB
+- Serverseitiges JavaScript (NodeJS)
+- Web-Anwendungen mit HTML5, CSS3, JavaScript auf Basis von Angular & TypeScript
+- Seit 2015 im Unternehmen
+- Seit 2016 Trainer
+- Seit 2025 DevOps Engineer
 
 ::right::
 
