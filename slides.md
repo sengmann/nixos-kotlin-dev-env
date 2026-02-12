@@ -23,6 +23,10 @@ hideInToc: true
 <Toc maxDepth="1" columns="1" mode="all" />
 
 ---
+src: pages/links.md
+---
+
+---
 src: pages/intro.md
 ---
 
@@ -36,6 +40,10 @@ src: pages/02_nix.md
 
 ---
 src: pages/03_devenv.md
+---
+
+---
+src: pages/links.md
 ---
 
 ---
