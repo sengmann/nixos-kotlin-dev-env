@@ -44,7 +44,7 @@ backgroundUrl: /assets/images/W11K-Gradient-Hintergrund.png
 
 ::right::
 
-::link-box{link='https://www.w11k.de' text=W11K socialLink='https://www.linkedin.com/company/w11k-gmbh' img='/assets/images/w11klogo.jpg' socialLink='https://www.linkedin.com/company/w11k-gmbh/'}
+::link-box{link='https://www.w11k.de' text=W11K socialLink='https://www.linkedin.com/company/w11k-gmbh' img='./assets/images/w11klogo.jpg' socialLink='https://www.linkedin.com/company/w11k-gmbh/'}
 ::
 
 ---
@@ -68,5 +68,5 @@ layoutClass: "bg-gray-800 text-white !bg-contain !bg-right-top"
 - Über X Schulungen mit über X Teilnehmer:innen
 
 ::right::
-::link-box{link='https://www.thecodecampus.de' text='thecodecampus.de' img='/assets/images/tcc_icon.PNG' socialLink='https://www.linkedin.com/showcase/thecodecampus/'}
+::link-box{link='https://www.thecodecampus.de' text='thecodecampus.de' img='./assets/images/tcc_icon.PNG' socialLink='https://www.linkedin.com/showcase/thecodecampus/'}
 ::
