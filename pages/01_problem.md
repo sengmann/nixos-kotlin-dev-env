@@ -98,7 +98,7 @@ layout: two-cols-header
 ::left::
 
 - Docker Container
-  - deklarativ<sub>1</sub>
+  - deklarativ<sup>1</sup>
   - Portabel
   - haben durch Isolierung eigene Probleme
 

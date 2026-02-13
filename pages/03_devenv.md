@@ -300,7 +300,7 @@ layout: two-cols-header
 - es können auch alle Nix Features genutzt werden, wenn man denn will
 - deutlich geringere Onboarding Zeiten
 - erheblich weniger Reibung bei Wechsel zwischen den Projekten
-- Processes nicht in Container zu kapseln macht es einfacher<sub>1</sub>
+- Processes nicht in Container zu kapseln macht es einfacher<sup>1</sup>
 
 <Footnotes separator>
   <Footnote :number="1">Beispiel: localhost ist wirklich localhost</Footnote>
@@ -310,8 +310,8 @@ layout: two-cols-header
 
 ## Offene Punkte
 
-- Projektübergreifende Secrets sind in SecretSpec aktuell nicht möglich <sub>1</sub>
-- Installation von Nix auf MacOS manchmal schwierig <sub>2</sub>
+- Projektübergreifende Secrets sind in SecretSpec aktuell nicht möglich <sup>1</sup>
+- Installation von Nix auf MacOS manchmal schwierig <sup>2</sup>
 - Build Prozess in Nix abbilden, um bessere Dockerimages zu bauen
 - MSSQL nicht in Nixpkgs, dafür brauchen wir immer noch Container
 

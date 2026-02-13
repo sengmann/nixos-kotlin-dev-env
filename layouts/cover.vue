@@ -13,7 +13,7 @@
               :text="coverAuthor"
             />
             <span v-if="idx < coverAuthors.length - 2">, </span>
-            <span v-if="idx === coverAuthors.length - 2"> and </span>
+            <span v-if="idx === coverAuthors.length - 2">&nbsp; </span>
           </template>
         </p>
         <p v-if="coverDate">
