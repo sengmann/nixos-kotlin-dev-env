@@ -6,5 +6,7 @@ export default defineConfig({
   safelist: [
     "i-vscode-icons:file-type-nix",
     "i-vscode-icons:file-type-light-toml",
+    "i-vscode-icons:file-type-docker2",
+    "i-vscode-icons:file-type-light-json",
   ],
 });

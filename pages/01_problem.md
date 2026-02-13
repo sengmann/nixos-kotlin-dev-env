@@ -106,7 +106,7 @@ layout: two-cols-header
 
 ::code-group
 
-```dockerfile [Dockerfile]
+```dockerfile [Dockerfile ~i-vscode-icons:file-type-docker2~]
 FROM ubuntu:26.04
 RUN apt-get update && \
     apt-get upgrade && \
@@ -145,7 +145,7 @@ layout: two-cols-header
 
 ::right::
 
-```json [devcontainer.json]
+```json [devcontainer.json ~i-vscode-icons:file-type-light-json~]
 {
   "image": "mcr.microsoft.com/devcontainers/typescript-node:20",
   "features": {

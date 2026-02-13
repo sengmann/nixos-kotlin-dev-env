@@ -3,7 +3,11 @@ theme: ./
 transition: fade
 title: Nix - Dev Environment
 coverAuthor: ["Sascha Engmann", "sascha@w11k.de"]
-coverAuthorUrl: ["https://www.linkedin.com/in/sascha-engmann-37065b1a4/", "mailto:sascha@w11k.de"]
+coverAuthorUrl:
+  [
+    "https://www.linkedin.com/in/sascha-engmann-37065b1a4/",
+    "mailto:sascha@w11k.de",
+  ]
 coverBackgroundSourceUrl: "https://github.com/NixOS/nixos-artwork/blob/master/wallpapers/nix-wallpaper-nineish-catppuccin-frappe.svg"
 coverBackgroundSource: "Nix wallpaper nineish catppuccin frappé - Lizenz: CC BY-SA 4.0"
 coverBackgroundUrl: /assets/images/nix-wallpaper-nineish-catppuccin-frappe-alt.svg
