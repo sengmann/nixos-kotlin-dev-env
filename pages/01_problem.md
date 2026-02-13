@@ -4,7 +4,7 @@
   - unterschiedliche SDK Versionen pro Projekt
   - verschiedene Artefakt-Server pro Kunde
 - nicht (gut) reproduzierbare Umgebung
-  - Fehler aka. Works on my machine
+  - Fehler, aka. "Works on my machine"
   - bei Änderungen keine Vorhersagbarkeit der Auswirkungen
 
 ---

@@ -27,8 +27,24 @@
   }
 }
 
+.slidev-layout.default {
+  h2 {
+    @apply mb-3;
+  }
+}
+
 h3::before {
   content: "<> ";
   color: var(--tcc-orange);
   letter-spacing: 3px;
+}
+
+.slidev-page {
+  @apply bg-sky-100;
+  @apply dark:bg-slate-900;
+
+  ul ul {
+    @apply list-disc;
+    @apply mb-1
+  }
 }

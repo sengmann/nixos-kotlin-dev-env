@@ -31,9 +31,9 @@ backgroundUrl: /assets/images/W11K-Gradient-Hintergrund.png
 
 ## Über W11K
 
-::left::
-
 ### The Web Engineers
+
+::left::
 
 - gegründet 2000
 - Individualsoftware: Kundenportale und Web-Apps
@@ -53,11 +53,12 @@ backgroundUrl: /assets/images/TCC-Bogen_r.png
 layoutClass: "bg-gray-800 text-white !bg-contain !bg-right-top"
 ---
 
-## **Über** the**code**campus </> {style="font-weight: normal"}
+## **Über** the**code**campus {style="font-weight: normal"}
+
+### Weiter. Entwickeln.
 
 ::left::
 
-### Weiter. Entwickeln.
 
 - gegründet 2013
 - Angular, Typescript, Software-Testing
