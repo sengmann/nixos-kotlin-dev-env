@@ -294,6 +294,52 @@ layout: two-cols-header
 
 ---
 
+## Profiles
+
+::code-group
+
+```nix [devenv.nix ~i-vscode-icons:file-type-nix~]
+{ pkgs, ... }:
+{
+  profiles = {
+    backend.module = {
+      services.postgres.enable = true;
+      services.redis.enable = true;
+      env.ENVIRONMENT = "backend";
+    };
+    frontend.module = {
+      languages.javascript.enable = true;
+      processes.dev-server.exec = "npm run dev";
+      env.ENVIRONMENT = "frontend";
+    };
+    testing.module =
+      { pkgs, ... }:
+      {
+        packages = [
+          pkgs.playwright
+          pkgs.cypress
+        ];
+        env.NODE_ENV = "test";
+      };
+  };
+}
+```
+
+```toml [secretspec.toml ~i-vscode-icons:file-type-light-toml~]
+[defaults]
+provider = "keyring"
+
+[profiles.default]
+artifactory_user = { required = true }
+
+[profiles.ci]
+artifactory_user = { required = true, providers = ['env'] }
+```
+
+::
+
+---
+
 ## Erfahrungen bisher
 
 - Lernkurve von Nix flacht deutlich ab, wenn Kollegen mit devenv starten
