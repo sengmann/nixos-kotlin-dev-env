@@ -45,6 +45,6 @@ h3::before {
 
   ul ul {
     @apply list-disc;
-    @apply mb-1
+    @apply mb-1;
   }
 }

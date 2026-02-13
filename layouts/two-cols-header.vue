@@ -60,7 +60,7 @@ const style = computed(() => handleBackground(props.backgroundUrl, props.dim));
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: fit-content(100px) 1fr 1fr;
-  @apply gap-2
+  @apply gap-2;
 }
 
 .col-header {

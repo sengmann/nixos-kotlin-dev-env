@@ -59,7 +59,6 @@ layoutClass: "bg-gray-800 text-white !bg-contain !bg-right-top"
 
 ::left::
 
-
 - gegründet 2013
 - Angular, Typescript, Software-Testing
 - Individuelle Inhouse-Schulungen
