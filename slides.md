@@ -19,7 +19,7 @@ lineNumbers: true
 favicon: /favicon/favicon.ico
 fonts:
   provider: none
-  local: Jetbrains Mono, Noto Sans
+  local: [Jetbrains Mono, Noto Sans]
 charset: UTF-8
 hideInToc: true
 ---
