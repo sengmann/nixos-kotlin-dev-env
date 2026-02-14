@@ -39,7 +39,7 @@ h3::before {
   letter-spacing: 3px;
 }
 
-.slidev-page {
+.slidev-page, header {
   @apply bg-sky-100;
   @apply dark:bg-slate-900;
 

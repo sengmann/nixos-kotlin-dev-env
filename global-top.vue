@@ -5,7 +5,7 @@
   >
     <div class="flex justify-between items-center mt-2">
       <img class="ml-4 h-4" src="/assets/images/tcc-logo_2.svg" />
-      <div class="mr-4 bold text-xs">Weiter.Entwickeln</div>
+      <div class="mr-4 bold text-xs font-sans">Weiter.Entwickeln</div>
     </div>
   </header>
 </template>
