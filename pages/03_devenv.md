@@ -161,6 +161,13 @@ artifactory_password = { description = "API Token from Artifactory, create one b
 artifactory_contextUrl = { description = "", required = true, default = "https://my-fancy-server.de/artifactory" }
 ```
 
+```yaml [devenv.yaml]
+secretspec:
+  enable: true
+  provider: keyring # keyring, dotenv, env, 1password, lastpass
+  profile: default # profile from secretspec.toml
+```
+
 ```nix [devenv.nix ~i-vscode-icons:file-type-nix~]
 { config }:
 {
@@ -331,6 +338,11 @@ provider = "keyring"
 
 [profiles.default]
 artifactory_user = { required = true }
+db-pass = {description = "the database password", required = true}
+
+[profiles.development]
+db-pass = {description = "the database password", default = "tcc"}
+
 
 [profiles.ci]
 artifactory_user = { required = true, providers = ['env'] }
