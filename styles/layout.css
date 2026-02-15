@@ -8,6 +8,21 @@
   --tcc-handson-bg-color: #252734;
 }
 
+/* fonts */
+.slidev-page,
+header {
+  --font-mono:
+    "Jetbrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  --font-sans:
+    "Noto Sans", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  /* Schriftarten werden nun global über das Frontmatter in slides.md gesteuert */
+
+  font-family: var(--font-sans);
+}
+
 .slidev-layout.cover,
 .slidev-layout.intro {
   @apply h-full grid;
@@ -39,20 +54,9 @@ h3::before {
   letter-spacing: 3px;
 }
 
-.slidev-page, header {
+.slidev-page {
   @apply bg-sky-100;
   @apply dark:bg-slate-900;
-
-  --font-mono:
-    "Jetbrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-    "Liberation Mono", "Courier New", monospace;
-  --font-sans:
-    "Noto Sans", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  /* Schriftarten werden nun global über das Frontmatter in slides.md gesteuert */
-
-  font-family: var(--font-sans);  
 
   ul ul {
     @apply list-disc;
