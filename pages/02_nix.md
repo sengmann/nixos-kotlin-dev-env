@@ -1,3 +1,8 @@
+---
+layout: image-right
+image: /assets/images/alice.png
+---
+
 # Was ist Nix?
 
 - eine funktionale Programmiersprache

@@ -343,7 +343,6 @@ db-pass = {description = "the database password", required = true}
 [profiles.development]
 db-pass = {description = "the database password", default = "tcc"}
 
-
 [profiles.ci]
 artifactory_user = { required = true, providers = ['env'] }
 ```

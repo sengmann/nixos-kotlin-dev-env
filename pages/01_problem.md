@@ -1,10 +1,28 @@
+---
+layout: image-right
+image: /assets/images/kaninchen.png
+---
+
 # Das Problem
+
+- Team von 4 Entwicklern und 1 DevOps
+- Projekt mit 39 Microservices
+- Services verwenden meistens
+    - Java / Kotlin
+    - TypeScript / Angular / NestJS
+- kaum Budget für Altprojekte
+- Altprojekte können Dependencies nicht einfach aktualisieren
+
+---
+
+## Das Problem
 
 - Wechsel zwischen verschiedenen Projekten bringt Reibung
   - unterschiedliche SDK Versionen pro Projekt
-  - verschiedene Artefakt-Server pro Kunde
+  - verschiedene Artefakt-Server
 - nicht (gut) reproduzierbare Umgebung
   - Fehler, aka. "Works on my machine"
+  - CI / CD bricht oft
   - bei Änderungen keine Vorhersagbarkeit der Auswirkungen
 
 ---
