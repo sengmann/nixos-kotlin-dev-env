@@ -1,6 +1,6 @@
 ---
 layout: image-right
-image: /assets/images/alice.png
+image: /assets/images/alice2.jpeg
 ---
 
 # Was ist Nix?
