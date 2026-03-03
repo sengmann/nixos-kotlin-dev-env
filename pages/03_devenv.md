@@ -372,7 +372,9 @@ artifactory_user = { required = true, providers = ['env'] }
 - Build Prozess in Nix abbilden, um bessere Dockerimages zu bauen
 - MSSQL nicht in Nixpkgs, dafür brauchen wir immer noch Container
 
+<!-- Hier muss man zusätzlich auch auf das Update von DevEnv warten, da im aktuellen Release nur secretspec 0.4.x eingebunden wird -->
+
 <Footnotes separator>
-  <Footnote :number="1">Feature soll mit Release <a href="https://github.com/cachix/devenv/issues/2449#issuecomment-3873588797">0.7.2</a> kommen</Footnote>
+  <Footnote :number="1">Feature kommt mit Release <a href="https://github.com/cachix/devenv/issues/2449#issuecomment-3873588797">0.7.2</a></Footnote>
   <Footnote :number="2">Bei macOS Updates verschwindet der Schlüssel des Nix Stores</Footnote>
 </Footnotes>

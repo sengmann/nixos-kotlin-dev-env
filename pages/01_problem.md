@@ -5,7 +5,7 @@ image: /assets/images/kaninchen.png
 
 # Das Problem
 
-- Team von 4 Entwicklern und 1 DevOps
+- Team von 5 Entwicklern und 1 DevOps
 - Projekt mit 39 Microservices
 - Services verwenden meistens
     - Java / Kotlin
