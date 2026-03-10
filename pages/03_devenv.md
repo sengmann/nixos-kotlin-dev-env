@@ -28,14 +28,14 @@ git version 2.52.0
 
 ```shell
 $ ls -al
-drwxr-xr-x    - user 12 Feb 12:07  .devenv
-drwxr-xr-x    - user 12 Feb 12:05  .direnv
-.rw-r--r--  21k user 12 Feb 12:05  .devenv.flake.nix
-.rw-r--r--  296 user 12 Feb 12:05  .envrc
-.rw-r--r--  109 user 12 Feb 12:05 󰊢 .gitignore
-.rw-r--r-- 2.9k user 12 Feb 12:05  devenv.lock
-.rw-r--r-- 1.0k user 12 Feb 12:05  devenv.nix
-.rw-r--r--  410 user 12 Feb 12:05  devenv.yaml
+drwxr-xr-x    - user 12 Feb 12:07 .devenv
+drwxr-xr-x    - user 12 Feb 12:05 .direnv
+.rw-r--r--  21k user 12 Feb 12:05 .devenv.flake.nix
+.rw-r--r--  296 user 12 Feb 12:05 .envrc
+.rw-r--r--  109 user 12 Feb 12:05 .gitignore
+.rw-r--r-- 2.9k user 12 Feb 12:05 devenv.lock
+.rw-r--r-- 1.0k user 12 Feb 12:05 devenv.nix
+.rw-r--r--  410 user 12 Feb 12:05 devenv.yaml
 ```
 
 ---
@@ -146,6 +146,7 @@ layout: two-cols-header
   - Welche Secrets gibt es
   - Wie werden Secrets festgelegt / verwendet (Profile, benötigt oder optional, Standartwerte)
   - Wo werden die Secrets gespeichert (Keyring, Env-Variablen, 1Password, ...)
+- Secrets können generiert werden
 - devenv integriert SecretSpec Secrets automatisch in Konfiguration
 
 ::code-group
@@ -157,7 +158,7 @@ revision = "1.0"
 
 [profiles.default]
 artifactory_user = { description = "Artifactory user, should be your user id", required = true }
-artifactory_password = { description = "API Token from Artifactory, create one by accessing your profile and click on 'set me up'", required = true }
+artifactory_password = { description = "API Token from Artifactory", required = true }
 artifactory_contextUrl = { description = "", required = true, default = "https://my-fancy-server.de/artifactory" }
 ```
 
@@ -225,8 +226,7 @@ layout: two-cols-header
   - Status
   - File-Watcher
   - Socket Aktivierungen
-- verschiedene Prozess Manager möglich
-- process-compose ist der Default <sup>1</sup>
+- verschiedene Prozess Manager möglich<sup>1</sup>
 
 ::right::
 
@@ -235,20 +235,17 @@ layout: two-cols-header
 {
   processes.backend = {
     exec = "gradle bootTestRun";
-    cwd = "${config.git.root}/backend";
-    process-compose = {
-      depends_on = {
-        postgres = {
-          condition = "process_healthy";
-        };
-      };
+    env = {
+      SPRING_DATABASE_PASSWORD = dbPass;
     };
+    cwd = "${config.git.root}/backend";
+    after = [ "devenv:processes:postgres" ];
   };
 }
 ```
 
 <Footnotes separator>
-  <Footnote :number=1>wird vielleicht als eigene Lösung integriert</Footnote>
+  <Footnote :number=1>Mit gerade erschiener Version 2 wurde process-compose durch native Lösung ersetzt</Footnote>
 </Footnotes>
 
 ---
@@ -367,14 +364,12 @@ artifactory_user = { required = true, providers = ['env'] }
 
 ## Offene Punkte
 
-- Projektübergreifende Secrets sind in SecretSpec aktuell nicht möglich <sup>1</sup>
+- Projektübergreifende Secrets benötigen einmaliges Setup<sup>1</sup>
 - Installation von Nix auf MacOS manchmal schwierig <sup>2</sup>
 - Build Prozess in Nix abbilden, um bessere Dockerimages zu bauen
 - MSSQL nicht in Nixpkgs, dafür brauchen wir immer noch Container
 
-<!-- Hier muss man zusätzlich auch auf das Update von DevEnv warten, da im aktuellen Release nur secretspec 0.4.x eingebunden wird -->
-
 <Footnotes separator>
-  <Footnote :number="1">Feature kommt mit Release <a href="https://github.com/cachix/devenv/issues/2449#issuecomment-3873588797">0.7.2</a></Footnote>
+  <Footnote :number="1">Demo in <a href="https://github.com/sengmann/dev-environments-playground/tree/secret-demo">Branch secret-demo</a></Footnote>
   <Footnote :number="2">Bei macOS Updates verschwindet der Schlüssel des Nix Stores</Footnote>
 </Footnotes>
