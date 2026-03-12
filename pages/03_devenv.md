@@ -365,7 +365,7 @@ artifactory_user = { required = true, providers = ['env'] }
 ## Offene Punkte
 
 - Projektübergreifende Secrets benötigen einmaliges Setup<sup>1</sup>
-- Installation von Nix auf MacOS manchmal schwierig <sup>2</sup>
+- Installation von Nix auf MacOS manchmal schwierig<sup>2</sup>
 - Build Prozess in Nix abbilden, um bessere Dockerimages zu bauen
 - MSSQL nicht in Nixpkgs, dafür brauchen wir immer noch Container
 

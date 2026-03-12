@@ -50,7 +50,7 @@ layout: two-cols-header
 
 ::right::
 
-![Package registry comparision](https://repology.org/graph/map_repo_size_fresh.svg)
+![Package registry comparision](/assets/images/map_repo_size_fresh.svg)
 
 <Footnotes separator>
   <Footnote :number=1>Graph: <a href="https://repology.org/repositories/graphs">https://repology.org/repositories/graphs</a></Footnote>
@@ -282,4 +282,4 @@ layout: two-cols-header
 - vereinfachte Abstraktion über Nix durch sinnvolle Defaults
 - deklarative Umgebungsdefinition via `devenv.nix`
 - automatische Aktivierung beim Betreten des Projektverzeichnisses (mit direnv)
-- integrierte Services (Datenbanken, Redis, etc.) über `process-compose`
+- integrierte Services (Datenbanken, Redis, etc.)
